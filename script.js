@@ -1,13 +1,23 @@
 var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwX2yMmTn2KD3zWfpv8JOR2pZT30UxE1l72699m2U1-b8Ym3-L0rduDTbVRn4nsWyke/exec';
+var submitCount = 0;
 
 document.querySelector('.email-form').addEventListener('submit', function(e) {
   e.preventDefault();
   e.stopPropagation();
 
+  var honeypot = this.querySelector('input[name="website"]');
+  if (honeypot && honeypot.value) return;
+
+  if (submitCount >= 3) {
+    this.querySelector('button').textContent = 'Limit reached';
+    return;
+  }
+
   var email = this.querySelector('input[type="email"]').value;
   var button = this.querySelector('button');
-  var input = this.querySelector('input');
+  var input = this.querySelector('input[type="email"]');
 
+  submitCount++;
   button.textContent = 'Sending...';
   button.disabled = true;
   input.disabled = true;
