@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inclusive Sans', sans-serif;
+  /* Replace with your door image: background-image: url('background.jpg'); */
+  background-color: #1a1a2e;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  max-width: 420px;
+  height: auto;
+}
+
+.tagline {
+  font-family: 'Inclusive Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+}
+
+.email-form {
+  display: flex;
+  gap: 0;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.email-form input {
+  flex: 1;
+  padding: 0.9rem 1.2rem;
+  border: none;
+  font-family: 'Inclusive Sans', sans-serif;
+  font-size: 0.85rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.email-form input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.email-form button {
+  padding: 0.9rem 1.8rem;
+  border: none;
+  background: rgba(201, 169, 110, 0.7);
+  color: rgba(255, 255, 255, 0.75);
+  font-family: 'Inclusive Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.email-form button:hover {
+  background: #b8944f;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 280px;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .email-form {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-width: 220px;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .email-form {
+    flex-direction: column;
+    border-radius: 6px;
+    max-width: 300px;
+  }
+
+  .email-form input {
+    text-align: center;
+    border-radius: 6px 6px 0 0;
+  }
+
+  .email-form button {
+    border-radius: 0 0 6px 6px;
+    padding: 0.8rem;
+  }
+}
